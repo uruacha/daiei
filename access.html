@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アクセス - 大栄建築設備 有限会社</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-bg': '#F9F7F3',
+                        'primary-text': '#222222',
+                        'accent': '#75604D',
+                        'philosophy-bg': '#F5F0E9'
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'Noto Serif JP', 'serif'],
+                        'sans': ['Noto Sans JP', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-primary-bg text-primary-text font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold text-primary-text">大栄建築設備</div>
+                <ul class="hidden md:flex space-x-6 text-primary-text">
+                    <li><a href="index.html" class="hover:text-accent transition-colors">ホーム</a></li>
+                    <li><a href="service.html" class="hover:text-accent transition-colors">サービス</a></li>
+                    <li><a href="recruit.html" class="hover:text-accent transition-colors">採用情報</a></li>
+                    <li><a href="access.html" class="hover:text-accent transition-colors text-accent">アクセス</a></li>
+                </ul>
+                <button class="md:hidden text-primary-text" id="menu-toggle">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <ul class="flex flex-col space-y-2 mt-4 text-primary-text">
+                    <li><a href="index.html" class="block py-2 hover:text-accent transition-colors">ホーム</a></li>
+                    <li><a href="service.html" class="block py-2 hover:text-accent transition-colors">サービス</a></li>
+                    <li><a href="recruit.html" class="block py-2 hover:text-accent transition-colors">採用情報</a></li>
+                    <li><a href="access.html" class="block py-2 hover:text-accent transition-colors text-accent">アクセス</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-16 px-4 bg-cover bg-center bg-no-repeat" style="background-image: url('https://source.unsplash.com/1600x500/?map,city,texture');">
+        <div class="absolute inset-0 bg-accent bg-opacity-70"></div>
+        <div class="relative z-10 container mx-auto max-w-4xl text-center text-white">
+            <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6">ACCESS</h1>
+            <p class="text-lg md:text-xl opacity-90">
+                北海道旭川市に拠点を構え、地域の皆様にサービスを提供しています
+            </p>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">所在地</h2>
+                <p class="text-lg text-gray-600">
+                    JR神楽岡駅から車で5分の立地です
+                </p>
+            </div>
+
+            <!-- Google Map -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.8234567890123!2d142.3654321!3d43.7654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0d1234567890ab%3A0x1234567890abcdef!2z5aSn5qCE5bu656+J6Kit5YKZ!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp" 
+                    class="w-full h-96 border-0" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="大栄建築設備 有限会社の所在地">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Info Section -->
+    <section class="py-16 px-4 bg-philosophy-bg">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Company Details -->
+                <div>
+                    <h3 class="text-2xl md:text-3xl font-serif font-bold mb-8">会社情報</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-accent text-xl mr-4 mt-1">🏢</div>
+                            <div>
+                                <h4 class="font-bold mb-1">会社名</h4>
+                                <p class="text-gray-700">大栄建築設備 有限会社</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-accent text-xl mr-4 mt-1">📍</div>
+                            <div>
+                                <h4 class="font-bold mb-1">住所</h4>
+                                <p class="text-gray-700">〒078-8028<br>
+                                北海道旭川市神楽岡8条3丁目2番22号</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-accent text-xl mr-4 mt-1">🚃</div>
+                            <div>
+                                <h4 class="font-bold mb-1">最寄り駅</h4>
+                                <p class="text-gray-700">JR神楽岡駅から車で5分</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-accent text-xl mr-4 mt-1">📞</div>
+                            <div>
+                                <h4 class="font-bold mb-1">電話</h4>
+                                <p class="text-gray-700">0166-656-624</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-accent text-xl mr-4 mt-1">✉️</div>
+                            <div>
+                                <h4 class="font-bold mb-1">メール</h4>
+                                <p class="text-gray-700 break-all">hayashi.m@daiei1977.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-accent text-xl mr-4 mt-1">⏰</div>
+                            <div>
+                                <h4 class="font-bold mb-1">営業時間</h4>
+                                <p class="text-gray-700">8:00〜17:00（平日）</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Building Photo -->
+                <div>
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <img src="/assets/photo/building.jpg" alt="大栄建築設備 外観" class="w-full h-64 md:h-80 object-cover">
+                        <!-- フォールバック用の写真URL -->
+                        <!-- <img src="https://source.unsplash.com/800x600/?building,office,company" alt="会社外観" class="w-full h-64 md:h-80 object-cover"> -->
+                    </div>
+                    <p class="text-center text-gray-600 mt-4">会社外観</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">お問い合わせ</h2>
+                <p class="text-lg text-gray-600">
+                    ご質問・ご相談がございましたら、お気軽にお声がけください
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Phone Contact -->
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div class="text-accent text-5xl mb-4">📞</div>
+                    <h3 class="text-xl font-bold mb-4">お電話でのお問い合わせ</h3>
+                    <p class="text-3xl font-bold text-accent mb-2">0166-656-624</p>
+                    <p class="text-gray-600 mb-4">平日 8:00〜17:00</p>
+                    <p class="text-sm text-gray-500">
+                        緊急時は営業時間外でも対応いたします
+                    </p>
+                </div>
+
+                <!-- Email Contact -->
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div class="text-accent text-5xl mb-4">✉️</div>
+                    <h3 class="text-xl font-bold mb-4">メールでのお問い合わせ</h3>
+                    <p class="text-lg text-accent mb-2 break-all">hayashi.m@daiei1977.com</p>
+                    <p class="text-gray-600 mb-4">担当：林（はやし）</p>
+                    <p class="text-sm text-gray-500">
+                        24時間受付・翌営業日にご返信いたします
+                    </p>
+                </div>
+            </div>
+
+            <!-- Service Area -->
+            <div class="mt-12 bg-philosophy-bg rounded-xl p-8 text-center">
+                <h3 class="text-2xl font-bold mb-4">サービス対応エリア</h3>
+                <p class="text-lg mb-4">旭川市を中心とした近隣地域</p>
+                <p class="text-gray-600">
+                    遠方の場合も対応可能な場合がございますので、まずはお気軽にご相談ください
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-4 bg-accent">
+        <div class="container mx-auto max-w-4xl text-center text-white">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">まずはお気軽にご相談ください</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90">
+                水回りのトラブルから大規模な設備工事まで、どんなことでもお気軽にお問い合わせください。
+                経験豊富なスタッフが親切丁寧に対応いたします。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:0166-656-624" class="inline-block bg-white text-accent px-8 py-4 rounded-lg font-medium text-lg hover:bg-opacity-90 transition-all">
+                    今すぐ電話
+                </a>
+                <a href="index.html" class="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-white hover:text-accent transition-all">
+                    トップページへ
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-text text-white py-12 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">大栄建築設備 有限会社</h4>
+                    <p class="mb-2">お客様にも自分にも誇れる仕事を</p>
+                    <p class="text-gray-300">北海道旭川市神楽岡8条3丁目2番22号</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">サービス</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>給排水衛生設備工事</li>
+                        <li>浄化槽設備工事</li>
+                        <li>旭川市水道局指定業者</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">お問い合わせ</h4>
+                    <p class="text-gray-300 mb-2">TEL: 0166-656-624</p>
+                    <p class="text-gray-300">Email: hayashi.m@daiei1977.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 大栄建築設備 有限会社. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

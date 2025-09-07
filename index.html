@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大栄建築設備有限会社 - お客様にも自分にも誇れる仕事を</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-bg': '#F8FAFC',
+                        'primary-text': '#1E293B',
+                        'accent': '#0F172A',
+                        'accent-light': '#334155',
+                        'section-bg': '#F1F5F9',
+                        'water-blue': '#0EA5E9',
+                        'light-blue': '#38BDF8',
+                        'deep-blue': '#0C4A6E',
+                        'modern-gray': '#64748B'
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'Noto Serif JP', 'serif'],
+                        'sans': ['Noto Sans JP', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'slide-in-right': 'slideInRight 0.8s ease-out'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-morphism {
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.125);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(117, 96, 77, 0.9) 0%, rgba(93, 78, 55, 0.8) 50%, rgba(0, 0, 0, 0.6) 100%);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .floating-element {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #0F172A 0%, #0EA5E9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .water-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(14, 165, 233, 0.05) 0%, transparent 50%);
+        }
+        
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="bg-primary-bg text-primary-text font-sans water-pattern">
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-3xl font-bold text-white font-serif tracking-wide" id="logo">
+                    <span class="text-gradient">大栄</span>建築設備有限会社
+                </div>
+                <ul class="hidden md:flex space-x-8 text-white font-medium" id="nav-menu">
+                    <li><a href="#" class="hover:text-water-blue transition-all duration-300 relative group">
+                        ホーム
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-water-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="service.html" class="hover:text-water-blue transition-all duration-300 relative group">
+                        サービス
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-water-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="recruit.html" class="hover:text-water-blue transition-all duration-300 relative group">
+                        採用情報
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-water-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="access.html" class="hover:text-water-blue transition-all duration-300 relative group">
+                        アクセス
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-water-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                </ul>
+                <button class="md:hidden text-white p-2 rounded-lg hover:bg-white hover:bg-opacity-20 transition-all duration-300" id="menu-toggle">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden glass-morphism rounded-xl mt-4 p-4" id="mobile-menu">
+                <ul class="flex flex-col space-y-3 text-primary-text">
+                    <li><a href="#" class="block py-2 px-4 hover:bg-accent hover:text-white rounded-lg transition-all duration-300">ホーム</a></li>
+                    <li><a href="service.html" class="block py-2 px-4 hover:bg-accent hover:text-white rounded-lg transition-all duration-300">サービス</a></li>
+                    <li><a href="recruit.html" class="block py-2 px-4 hover:bg-accent hover:text-white rounded-lg transition-all duration-300">採用情報</a></li>
+                    <li><a href="access.html" class="block py-2 px-4 hover:bg-accent hover:text-white rounded-lg transition-all duration-300">アクセス</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center parallax-bg overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1581094651181-35942459ef62?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+        <!-- 後で /assets/photo/hero.jpg に差替 -->
+        <div class="absolute inset-0 bg-gradient-to-br from-deep-blue/80 via-accent/70 to-water-blue/60"></div>
+        
+        <!-- Floating geometric shapes -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-20 left-10 w-32 h-32 border border-white border-opacity-20 rounded-full floating-element" style="animation-delay: 0s;"></div>
+            <div class="absolute top-40 right-20 w-20 h-20 border border-water-blue border-opacity-30 rounded-full floating-element" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-32 left-20 w-24 h-24 border border-white border-opacity-10 rounded-full floating-element" style="animation-delay: 2s;"></div>
+        </div>
+        
+        <div class="relative z-10 text-center text-white px-6 max-w-6xl mx-auto">
+            <div class="floating-element mb-8">
+                <div class="inline-block p-3 rounded-full bg-white bg-opacity-10 backdrop-blur-sm border border-white border-opacity-20 mb-6">
+                    <svg class="w-8 h-8 text-water-blue" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-serif font-bold mb-8 leading-tight">
+                <span class="block text-white opacity-95" data-aos="fade-up" data-aos-delay="200">お客様にも</span>
+                <span class="block text-water-blue text-6xl md:text-8xl" data-aos="fade-up" data-aos-delay="400">自分にも</span>
+                <span class="block text-white opacity-95" data-aos="fade-up" data-aos-delay="600">誇れる仕事を</span>
+            </h1>
+            
+            <div class="w-24 h-1 bg-water-blue mx-auto mb-8 rounded-full" data-aos="fade-up" data-aos-delay="800"></div>
+            
+            <p class="text-xl md:text-2xl mb-12 opacity-95 max-w-4xl mx-auto leading-relaxed font-light" data-aos="fade-up" data-aos-delay="1000">
+                北海道旭川市で50年以上の実績を誇る大栄建築設備。<br class="hidden md:block">
+                給排水設備から浄化槽まで、地域の水回りを支える信頼のパートナーとして、<br class="hidden md:block">
+                お客様の暮らしに<span class="text-water-blue font-medium">安心と快適</span>をお届けします。
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="1200">
+                <a href="recruit.html" class="group relative inline-flex items-center justify-center px-8 py-4 bg-water-blue text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                    <span class="relative z-10 flex items-center">
+                        採用情報を見る
+                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </span>
+                    <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 rounded-xl transition-opacity duration-300"></div>
+                </a>
+                
+                <a href="service.html" class="group inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-medium text-lg rounded-xl hover:bg-white hover:text-deep-brown transition-all duration-300">
+                    <span class="flex items-center">
+                        サービス詳細
+                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">私たちについて</h2>
+                    <p class="text-lg mb-6 leading-relaxed">
+                        大栄建築設備有限会社は、北海道旭川市に根ざした建築設備のプロフェッショナル集団です。給排水設備工事、浄化槽設備工事を中心に、お客様の快適な生活環境作りをサポートしています。
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        旭川市水道局指定工事業者として、確かな技術力と豊富な経験を持つスタッフが、責任を持って工事を行います。小さな修理から大規模な設備工事まで、どんなご要望にもお応えします。
+                    </p>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="配管作業の様子" class="w-full h-96 object-cover rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="py-16 px-4 bg-section-bg">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold mb-8">経営理念</h2>
+            <h3 class="text-xl md:text-2xl font-serif mb-8 text-accent">
+                お客様にも自分にも誇れる仕事を。
+            </h3>
+            <p class="text-lg leading-relaxed mb-12 max-w-3xl mx-auto">
+                私たちは「お客様にも自分にも誇れる仕事」を礎として、誠実さ、信頼性、成長、品質を大切に、常にお客様の立場に立ったサービスを提供し続けます。一つひとつの工事に責任を持ち、地域社会に貢献できる企業であり続けることを目指しています。
+            </p>
+            
+            <!-- Value Icons -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                <div class="text-center">
+                    <div class="text-4xl mb-3">🎯</div>
+                    <h4 class="font-medium">誠実</h4>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-3">🤝</div>
+                    <h4 class="font-medium">信頼</h4>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-3">🏠</div>
+                    <h4 class="font-medium">安心</h4>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-3">🚀</div>
+                    <h4 class="font-medium">成長</h4>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-3">✨</div>
+                    <h4 class="font-medium">品質</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Song Section -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto max-w-2xl text-center">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold mb-8">社歌</h2>
+            <p class="text-lg mb-8">私たちの想いを込めた社歌をお聞きください</p>
+            <audio controls class="w-full max-w-md mx-auto">
+                <source src="/assets/audio/shaka.mp3" type="audio/mpeg">
+                お使いのブラウザでは再生できません。
+            </audio>
+        </div>
+    </section>
+
+    <!-- Services Preview Section -->
+    <section class="py-20 px-6 bg-gradient-to-br from-section-bg to-primary-bg relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-20 left-20 w-64 h-64 border-2 border-accent rounded-full"></div>
+            <div class="absolute bottom-20 right-20 w-48 h-48 border border-water-blue rounded-full"></div>
+        </div>
+        
+        <div class="container mx-auto max-w-7xl relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-block p-3 rounded-full bg-water-blue bg-opacity-10 backdrop-blur-sm border border-water-blue border-opacity-20 mb-6">
+                    <svg class="w-8 h-8 text-water-blue" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-gradient mb-6">私たちのサービス</h2>
+                <div class="w-24 h-1 bg-water-blue mx-auto rounded-full mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    確かな技術力と豊富な経験で、お客様の水回りのあらゆるニーズにお応えします
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Service 1 -->
+                <div class="service-card group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581094651181-35942459ef62?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="掘削・配管工事" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-accent bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                        <div class="absolute top-4 left-4">
+                            <div class="bg-water-blue text-white px-3 py-1 rounded-full text-sm font-medium">SERVICE 01</div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-accent bg-opacity-10 rounded-xl flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-primary-text">給排水衛生設備工事</h3>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            住宅やビルの給排水設備の設計・施工・メンテナンスを行います。水漏れ修理から大規模な配管工事まで対応。
+                        </p>
+                        <div class="flex items-center text-accent font-medium group-hover:text-water-blue transition-colors duration-300">
+                            詳しく見る
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="浄化槽設置工事" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-accent bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                        <div class="absolute top-4 left-4">
+                            <div class="bg-water-blue text-white px-3 py-1 rounded-full text-sm font-medium">SERVICE 02</div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-accent bg-opacity-10 rounded-xl flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-primary-text">浄化槽設備工事</h3>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            浄化槽の新設・修理・点検を専門技術者が実施。環境に配慮した適切な排水処理をサポートします。
+                        </p>
+                        <div class="flex items-center text-accent font-medium group-hover:text-water-blue transition-colors duration-300">
+                            詳しく見る
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="600">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="信頼できる水道局指定業者" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-accent bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                        <div class="absolute top-4 left-4">
+                            <div class="bg-water-blue text-white px-3 py-1 rounded-full text-sm font-medium">SERVICE 03</div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-accent bg-opacity-10 rounded-xl flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-primary-text">旭川市水道局指定業者</h3>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            旭川市水道局指定工事業者として、公的な水道工事も安心してお任せください。確かな技術と信頼でお応えします。
+                        </p>
+                        <div class="flex items-center text-accent font-medium group-hover:text-water-blue transition-colors duration-300">
+                            詳しく見る
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" data-aos="fade-up" data-aos-delay="800">
+                <a href="service.html" class="group inline-flex items-center px-10 py-4 bg-gradient-to-r from-accent to-deep-brown text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                    <span class="flex items-center">
+                        すべてのサービスを見る
+                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recruit Teaser Section -->
+    <section class="relative py-20 px-4 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
+        <div class="absolute inset-0 bg-gradient-to-r from-water-blue/80 to-deep-blue/80"></div>
+        <div class="relative z-10 container mx-auto max-w-4xl text-center text-white">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">仲間を募集しています</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">
+                未経験から始められる配管工スタッフを募集中。充実した研修制度と働きやすい環境で、一緒に成長していきませんか？
+            </p>
+            <a href="recruit.html" class="inline-block bg-white text-accent px-8 py-4 rounded-lg font-medium text-lg hover:bg-opacity-90 transition-all">
+                採用情報を見る
+            </a>
+        </div>
+    </section>
+
+    <!-- Work Gallery Section -->
+    <section class="py-20 px-6 bg-section-bg">
+        <div class="container mx-auto max-w-7xl">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-block p-3 rounded-full bg-water-blue bg-opacity-10 backdrop-blur-sm border border-water-blue border-opacity-20 mb-6">
+                    <svg class="w-8 h-8 text-water-blue" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"/>
+                    </svg>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-gradient mb-6">施工実績</h2>
+                <div class="w-24 h-1 bg-water-blue mx-auto rounded-full mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    これまで手がけてきた様々な現場での作業風景をご紹介します
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Work Image 1 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1581094651181-35942459ef62?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="掘削・配管工事" class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <h3 class="text-lg font-bold mb-2">掘削・配管工事</h3>
+                        <p class="text-sm opacity-90">地中配管の掘削・設置作業</p>
+                    </div>
+                </div>
+                
+                <!-- Work Image 2 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="水道修理作業" class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <h3 class="text-lg font-bold mb-2">給水管修理</h3>
+                        <p class="text-sm opacity-90">水漏れ・破損管の修理作業</p>
+                    </div>
+                </div>
+                
+                <!-- Work Image 3 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="浄化槽設置" class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <h3 class="text-lg font-bold mb-2">浄化槽設置</h3>
+                        <p class="text-sm opacity-90">新設・交換・メンテナンス</p>
+                    </div>
+                </div>
+                
+                <!-- Work Image 4 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="800">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="プロフェッショナルチーム" class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <h3 class="text-lg font-bold mb-2">プロフェッショナルサービス</h3>
+                        <p class="text-sm opacity-90">経験豊富な技術者による施工</p>
+                    </div>
+                </div>
+                
+                <!-- Work Image 5 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="1000">
+                    <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="チーム作業" class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <h3 class="text-lg font-bold mb-2">チーム作業</h3>
+                        <p class="text-sm opacity-90">協力して進める現場作業</p>
+                    </div>
+                </div>
+                
+                <!-- Work Image 6 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="1200">
+                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="品質検査" class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <h3 class="text-lg font-bold mb-2">品質検査</h3>
+                        <p class="text-sm opacity-90">工事完了後の最終確認</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Access Teaser Section -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-12">アクセス</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.8234567890123!2d142.3654321!3d43.7654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0d1234567890ab%3A0x1234567890abcdef!2z5aSn5qCE5bu656+J6Kit5YKZ!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp" 
+                        class="w-full h-64 border-0 rounded-lg" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">会社所在地</h3>
+                    <p class="text-lg mb-2">北海道旭川市神楽岡8条3丁目2番22号</p>
+                    <p class="text-gray-600 mb-6">JR神楽岡駅から車で5分</p>
+                    <a href="access.html" class="inline-block bg-accent text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all">
+                        詳細を見る
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-text text-white py-12 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">大栄建築設備有限会社</h4>
+                    <p class="mb-2">お客様にも自分にも誇れる仕事を</p>
+                    <p class="text-gray-300">北海道旭川市神楽岡8条3丁目2番22号</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">サービス</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>給排水衛生設備工事</li>
+                        <li>浄化槽設備工事</li>
+                        <li>旭川市水道局指定業者</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">お問い合わせ</h4>
+                    <p class="text-gray-300 mb-2">TEL: 0166-656-624</p>
+                    <p class="text-gray-300">Email: hayashi.m@daiei1977.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 大栄建築設備有限会社. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 100
+        });
+
+        // Header scroll effect with enhanced animations
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            const logo = document.getElementById('logo');
+            const navMenu = document.getElementById('nav-menu');
+            
+            if (window.scrollY > 50) {
+                header.classList.add('glass-morphism', 'shadow-lg');
+                header.classList.remove('bg-transparent');
+                logo.classList.remove('text-white');
+                logo.classList.add('text-primary-text');
+                navMenu.classList.remove('text-white');
+                navMenu.classList.add('text-primary-text');
+            } else {
+                header.classList.remove('glass-morphism', 'shadow-lg');
+                header.classList.add('bg-transparent');
+                logo.classList.add('text-white');
+                logo.classList.remove('text-primary-text');
+                navMenu.classList.add('text-white');
+                navMenu.classList.remove('text-primary-text');
+            }
+        });
+
+        // Mobile menu toggle with animation
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
