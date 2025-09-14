@@ -3,7 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大栄建築設備有限会社 - お客様にも自分にも誇れる仕事を</title>
+    <title>大栄建築設備有限会社 - 旭川市の給排水・浄化槽工事なら | 水道局指定業者</title>
+    <meta name="description" content="北海道旭川市の大栄建築設備有限会社は、給排水衛生設備工事・浄化槽設備工事の専門業者です。旭川市水道局指定工事業者として50年以上の実績。水漏れ修理から大規模配管工事まで対応。">
+    <meta name="keywords" content="旭川市,大栄建築設備,給排水工事,浄化槽工事,水道工事,配管工事,水漏れ修理,水道局指定業者,建築設備">
+    <meta name="author" content="大栄建築設備有限会社">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.daiei-construction.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.daiei-construction.com/">
+    <meta property="og:title" content="大栄建築設備有限会社 - 旭川市の給排水・浄化槽工事なら">
+    <meta property="og:description" content="北海道旭川市の大栄建築設備有限会社は、給排水衛生設備工事・浄化槽設備工事の専門業者です。旭川市水道局指定工事業者として50年以上の実績。">
+    <meta property="og:image" content="https://www.daiei-construction.com/assets/img/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.daiei-construction.com/">
+    <meta property="twitter:title" content="大栄建築設備有限会社 - 旭川市の給排水・浄化槽工事なら">
+    <meta property="twitter:description" content="北海道旭川市の大栄建築設備有限会社は、給排水衛生設備工事・浄化槽設備工事の専門業者です。">
+    <meta property="twitter:image" content="https://www.daiei-construction.com/assets/img/og-image.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "大栄建築設備有限会社",
+      "description": "北海道旭川市の給排水衛生設備工事・浄化槽設備工事専門業者",
+      "url": "https://www.daiei-construction.com/",
+      "telephone": "0166-65-6624",
+      "email": "hayashi.m@daiei1977.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "神楽岡8条3丁目2番22号",
+        "addressLocality": "旭川市",
+        "addressRegion": "北海道",
+        "addressCountry": "JP"
+      },
+      "openingHours": "Mo-Fr 08:00-17:00",
+      "priceRange": "$$",
+      "areaServed": {
+        "@type": "City",
+        "name": "旭川市"
+      },
+      "serviceType": ["給排水衛生設備工事", "浄化槽設備工事", "水道工事"]
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
@@ -98,7 +144,8 @@
         <nav class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <div class="text-3xl font-bold text-white font-serif tracking-wide" id="logo">
-                    <span class="text-gradient">大栄</span>建築設備有限会社
+                    <span class="text-white hover:text-water-blue transition-colors duration-300 tracking-wider">大栄建築設備</span>
+                    <span class="text-water-blue font-light text-xl ml-2">有限会社</span>
                 </div>
                 <ul class="hidden md:flex space-x-8 text-white font-medium" id="nav-menu">
                     <li><a href="#" class="hover:text-water-blue transition-all duration-300 relative group">
@@ -535,7 +582,7 @@
                 </div>
                 <div>
                     <h4 class="text-lg font-semibold mb-4">お問い合わせ</h4>
-                    <p class="text-gray-300 mb-2">TEL: 0166-656-624</p>
+                    <p class="text-gray-300 mb-2">TEL: 0166-65-6624</p>
                     <p class="text-gray-300">Email: hayashi.m@daiei1977.com</p>
                 </div>
             </div>
@@ -564,17 +611,23 @@
             if (window.scrollY > 50) {
                 header.classList.add('glass-morphism', 'shadow-lg');
                 header.classList.remove('bg-transparent');
-                logo.classList.remove('text-white');
-                logo.classList.add('text-primary-text');
                 navMenu.classList.remove('text-white');
                 navMenu.classList.add('text-primary-text');
+                // ロゴの色も変更
+                logo.querySelector('span:first-child').classList.remove('text-white');
+                logo.querySelector('span:first-child').classList.add('text-primary-text');
+                logo.querySelector('span:last-child').classList.remove('text-water-blue');
+                logo.querySelector('span:last-child').classList.add('text-accent');
             } else {
                 header.classList.remove('glass-morphism', 'shadow-lg');
                 header.classList.add('bg-transparent');
-                logo.classList.add('text-white');
-                logo.classList.remove('text-primary-text');
                 navMenu.classList.add('text-white');
                 navMenu.classList.remove('text-primary-text');
+                // ロゴの色を元に戻す
+                logo.querySelector('span:first-child').classList.add('text-white');
+                logo.querySelector('span:first-child').classList.remove('text-primary-text');
+                logo.querySelector('span:last-child').classList.add('text-water-blue');
+                logo.querySelector('span:last-child').classList.remove('text-accent');
             }
         });
 

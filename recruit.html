@@ -6,138 +6,441 @@
     <title>採用情報 - 大栄建築設備 有限会社</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary-bg': '#F9F7F3',
-                        'primary-text': '#222222',
-                        'accent': '#75604D',
-                        'philosophy-bg': '#F5F0E9'
+                        'primary-bg': '#F8FAFC',
+                        'primary-text': '#1E293B',
+                        'accent': '#0F172A',
+                        'accent-light': '#334155',
+                        'section-bg': '#F1F5F9',
+                        'water-blue': '#0EA5E9',
+                        'light-blue': '#38BDF8',
+                        'deep-blue': '#0C4A6E',
+                        'modern-gray': '#64748B'
                     },
                     fontFamily: {
                         'serif': ['Playfair Display', 'Noto Serif JP', 'serif'],
                         'sans': ['Noto Sans JP', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'slide-in-right': 'slideInRight 0.8s ease-out'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        }
                     }
                 }
             }
         }
     </script>
+    <style>
+        .glass-morphism {
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.125);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(12, 74, 110, 0.9) 0%, rgba(15, 23, 42, 0.8) 50%, rgba(0, 0, 0, 0.6) 100%);
+        }
+        
+        .floating-element {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #0F172A 0%, #0EA5E9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .water-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(14, 165, 233, 0.05) 0%, transparent 50%);
+        }
+    </style>
 </head>
-<body class="bg-primary-bg text-primary-text font-sans">
+<body class="bg-primary-bg text-primary-text font-sans water-pattern">
     <!-- Header -->
-    <header class="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
-        <nav class="container mx-auto px-4 py-4">
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <nav class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <div class="text-xl font-bold text-primary-text">大栄建築設備</div>
-                <ul class="hidden md:flex space-x-6 text-primary-text">
-                    <li><a href="index.html" class="hover:text-accent transition-colors">ホーム</a></li>
-                    <li><a href="service.html" class="hover:text-accent transition-colors">サービス</a></li>
-                    <li><a href="recruit.html" class="hover:text-accent transition-colors text-accent">採用情報</a></li>
-                    <li><a href="access.html" class="hover:text-accent transition-colors">アクセス</a></li>
+                <div class="text-3xl font-bold text-white font-serif tracking-wide" id="logo">
+                    <span class="text-white hover:text-water-blue transition-colors duration-300 tracking-wider">大栄建築設備</span>
+                    <span class="text-water-blue font-light text-xl ml-2">有限会社</span>
+                </div>
+                <ul class="hidden md:flex space-x-8 text-white font-medium" id="nav-menu">
+                    <li><a href="index.html" class="hover:text-water-blue transition-all duration-300 relative group">
+                        ホーム
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-water-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="service.html" class="hover:text-water-blue transition-all duration-300 relative group">
+                        サービス
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-water-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="recruit.html" class="text-water-blue relative group">
+                        採用情報
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-water-blue"></span>
+                    </a></li>
+                    <li><a href="access.html" class="hover:text-water-blue transition-all duration-300 relative group">
+                        アクセス
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-water-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
                 </ul>
-                <button class="md:hidden text-primary-text" id="menu-toggle">
+                <button class="md:hidden text-white p-2 rounded-lg hover:bg-white hover:bg-opacity-20 transition-all duration-300" id="menu-toggle">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
             <!-- Mobile menu -->
-            <div class="md:hidden hidden" id="mobile-menu">
-                <ul class="flex flex-col space-y-2 mt-4 text-primary-text">
-                    <li><a href="index.html" class="block py-2 hover:text-accent transition-colors">ホーム</a></li>
-                    <li><a href="service.html" class="block py-2 hover:text-accent transition-colors">サービス</a></li>
-                    <li><a href="recruit.html" class="block py-2 hover:text-accent transition-colors text-accent">採用情報</a></li>
-                    <li><a href="access.html" class="block py-2 hover:text-accent transition-colors">アクセス</a></li>
+            <div class="md:hidden hidden glass-morphism rounded-xl mt-4 p-4" id="mobile-menu">
+                <ul class="flex flex-col space-y-3 text-primary-text">
+                    <li><a href="index.html" class="block py-2 px-4 hover:bg-accent hover:text-white rounded-lg transition-all duration-300">ホーム</a></li>
+                    <li><a href="service.html" class="block py-2 px-4 hover:bg-accent hover:text-white rounded-lg transition-all duration-300">サービス</a></li>
+                    <li><a href="recruit.html" class="block py-2 px-4 bg-accent text-white rounded-lg">採用情報</a></li>
+                    <li><a href="access.html" class="block py-2 px-4 hover:bg-accent hover:text-white rounded-lg transition-all duration-300">アクセス</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-20 min-h-[60vh] flex items-center justify-center bg-cover bg-center bg-no-repeat" style="background-image: url('https://source.unsplash.com/1600x600/?young,workers,construction');">
-        <div class="absolute inset-0 bg-accent bg-opacity-80"></div>
-        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6">仲間を募集しています</h1>
-            <p class="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
-                未経験から始められる配管工スタッフを募集中。充実した研修制度と働きやすい環境で、一緒に成長していきませんか？
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;">
+        <div class="absolute inset-0 hero-gradient"></div>
+        
+        <!-- Floating geometric shapes -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-20 left-10 w-32 h-32 border border-white border-opacity-20 rounded-full floating-element" style="animation-delay: 0s;"></div>
+            <div class="absolute top-40 right-20 w-20 h-20 border border-water-blue border-opacity-30 rounded-full floating-element" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-32 left-20 w-24 h-24 border border-white border-opacity-10 rounded-full floating-element" style="animation-delay: 2s;"></div>
+        </div>
+        
+        <div class="relative z-10 text-center text-white px-6 max-w-6xl mx-auto">
+            <div class="floating-element mb-8">
+                <div class="inline-block p-3 rounded-full bg-white bg-opacity-10 backdrop-blur-sm border border-white border-opacity-20 mb-6">
+                    <svg class="w-8 h-8 text-water-blue" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-serif font-bold mb-8 leading-tight">
+                <span class="block text-white opacity-95" data-aos="fade-up" data-aos-delay="200">一緒に働く</span>
+                <span class="block text-water-blue text-6xl md:text-8xl" data-aos="fade-up" data-aos-delay="400">仲間を</span>
+                <span class="block text-white opacity-95" data-aos="fade-up" data-aos-delay="600">募集しています</span>
+            </h1>
+            
+            <div class="w-24 h-1 bg-water-blue mx-auto mb-8 rounded-full" data-aos="fade-up" data-aos-delay="800"></div>
+            
+            <p class="text-xl md:text-2xl mb-12 opacity-95 max-w-4xl mx-auto leading-relaxed font-light" data-aos="fade-up" data-aos-delay="1000">
+                現在30代～60代のスタッフ6名が活躍中！<br class="hidden md:block">
+                手に職をつけて、やりがいのある仕事を<br class="hidden md:block">
+                一緒に始めませんか。
             </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="1200">
+                <a href="tel:0166-65-6624" class="group relative inline-flex items-center justify-center px-8 py-4 bg-water-blue text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                    <span class="relative z-10 flex items-center">
+                        電話で応募
+                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        </svg>
+                    </span>
+                    <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 rounded-xl transition-opacity duration-300"></div>
+                </a>
+                
+                <a href="#requirements" class="group inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-medium text-lg rounded-xl hover:bg-white hover:text-deep-blue transition-all duration-300">
+                    <span class="flex items-center">
+                        募集要項を見る
+                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Work Environment Section -->
+    <section class="py-20 px-6 bg-section-bg relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-20 left-20 w-64 h-64 border-2 border-accent rounded-full"></div>
+            <div class="absolute bottom-20 right-20 w-48 h-48 border border-water-blue rounded-full"></div>
+        </div>
+        
+        <div class="container mx-auto max-w-7xl relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-block p-3 rounded-full bg-water-blue bg-opacity-10 backdrop-blur-sm border border-water-blue border-opacity-20 mb-6">
+                    <svg class="w-8 h-8 text-water-blue" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-gradient mb-6">働きやすい環境です</h2>
+                <div class="w-24 h-1 bg-water-blue mx-auto rounded-full mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    残業や出張も少なく、仕事終わりは家でゆっくり自分の時間を過ごせます
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-8 hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-water-blue bg-opacity-10 rounded-xl flex items-center justify-center mr-6">
+                        <div class="text-4xl">👥</div>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-primary-text">現在30代〜60代のスタッフ6名が活躍中！</h3>
+                </div>
+                <p class="text-lg leading-relaxed text-gray-600">
+                    残業や出張も少なく、仕事終わりは家でゆっくり自分の時間を過ごせる環境です。<br>
+                    先輩スタッフが一から丁寧に指導し、技術を身につけるまでしっかりとサポートします。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Honest Talk Section -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">正直にお話しします</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Challenges -->
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <h3 class="text-xl font-bold mb-4 text-red-600">正直なところ...</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="text-red-500 mr-3 mt-1">•</div>
+                            <p>体力的にきついこともあるし、汚れる作業もあります。</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-red-500 mr-3 mt-1">•</div>
+                            <p>時には厳しく指導されることもあります。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Benefits -->
+                <div class="bg-blue-50 rounded-xl p-8">
+                    <h3 class="text-xl font-bold mb-4 text-blue-600">でも、だからこそ...</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="text-blue-500 mr-3 mt-1">•</div>
+                            <p>ライフラインを守る誇りとやりがいがあります。</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-blue-500 mr-3 mt-1">•</div>
+                            <p>人材不足が進む中で、今から手に職をつければ一生ものの技術を身につけることができます。</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-blue-500 mr-3 mt-1">•</div>
+                            <p class="font-medium">この仕事がなくなればみんなの生活は成り立たない──そのくらい重要な仕事です。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Job Details Section -->
-    <section class="py-16 px-4">
-        <div class="container mx-auto max-w-4xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">募集要項</h2>
-                <p class="text-lg text-gray-600">
+    <section id="requirements" class="py-20 px-6">
+        <div class="container mx-auto max-w-7xl">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-block p-3 rounded-full bg-water-blue bg-opacity-10 backdrop-blur-sm border border-water-blue border-opacity-20 mb-6">
+                    <svg class="w-8 h-8 text-water-blue" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-gradient mb-6">募集要項</h2>
+                <div class="w-24 h-1 bg-water-blue mx-auto rounded-full mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                     技術を身につけて、地域の暮らしを支える仕事をしませんか
                 </p>
             </div>
 
+            <!-- Job Position Cards -->
+            <div class="space-y-8 mb-12">
+                <!-- 1. 募集職種 -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-accent text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">1</div>
+                        <h3 class="text-2xl font-bold">募集職種</h3>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2">• 配管工スタッフ</h4>
+                            <p class="text-sm text-gray-600">（職人／現場作業員）</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2">• 事務職</h4>
+                            <p class="text-sm text-gray-600">書類作成、電話・来客対応、水道局等への書類提出業務</p>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2">• 現場管理職</h4>
+                            <p class="text-sm text-gray-600">施工管理・品質管理、協力業者との調整など</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-center font-bold text-accent">【正社員】</p>
+                </div>
+
+                <!-- 2. 仕事内容 -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-accent text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">2</div>
+                        <h3 class="text-2xl font-bold">仕事内容</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 leading-relaxed">
+                            当社は旭川市水道局指定業者として、安定した業績を維持しており、長く安心して働ける環境です。
+                        </p>
+                        <p class="text-gray-800 leading-relaxed">
+                            商業施設や住宅などで、屋外から建物内へ水道をつなぐ配管工事・設備工事を行っています。<br>
+                            その他にも水道管凍結時の修理や融雪槽の施工など、地域に欠かせない工事を幅広く手掛けています。
+                        </p>
+                        <p class="text-gray-800 leading-relaxed">
+                            現場は2〜3名のチーム制で動き、未経験の方はまず先輩と一緒に現場に入り、部品の名前や仕事の流れを学びながら補助業務からスタートできます。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. こんな方を募集しています -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-accent text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">3</div>
+                        <h3 class="text-2xl font-bold">こんな方を募集しています！</h3>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <span class="text-blue-500 mr-3">✓</span>
+                                <p>配管工の仕事に興味がある方</p>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-blue-500 mr-3">✓</span>
+                                <p>手に職をつけて長く働きたい方</p>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-blue-500 mr-3">✓</span>
+                                <p>明るく元気なあいさつができる方</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <span class="text-blue-500 mr-3">✓</span>
+                                <p>成長意欲のある方</p>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-blue-500 mr-3">✓</span>
+                                <p class="font-bold">20代〜40代の方、大歓迎！</p>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-green-500 mr-3 font-bold">★</span>
+                                <p class="font-bold text-green-600">経験不問</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Requirements -->
             <div class="bg-white rounded-xl shadow-lg ring-1 ring-gray-200 overflow-hidden">
                 <div class="p-8 md:p-12">
                     <div class="grid md:grid-cols-2 gap-8">
                         <!-- Left Column -->
                         <div class="space-y-6">
                             <div>
-                                <h3 class="text-lg font-bold text-accent mb-2">募集職種</h3>
-                                <p class="text-gray-800">配管工スタッフ（職人／現場作業員）【正社員】</p>
-                            </div>
-                            
-                            <div>
-                                <h3 class="text-lg font-bold text-accent mb-2">仕事内容</h3>
-                                <p class="text-gray-800 leading-relaxed">給排水設備・凍結修理・融雪槽工事を2〜3名のチームで行います。先輩スタッフが丁寧に指導しますので、未経験の方も安心してご応募ください。</p>
-                            </div>
-                            
-                            <div>
-                                <h3 class="text-lg font-bold text-accent mb-2">応募資格</h3>
-                                <p class="text-gray-800">経験不問、手に職をつけたい方歓迎</p>
-                            </div>
-                            
-                            <div>
-                                <h3 class="text-lg font-bold text-accent mb-2">勤務地</h3>
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl mr-2">📍</span>
+                                    <h3 class="text-lg font-bold text-accent">勤務地</h3>
+                                </div>
                                 <p class="text-gray-800">北海道旭川市神楽岡8条3丁目2番22号<br>
-                                <span class="text-sm text-gray-600">（JR神楽岡駅から車で5分）</span></p>
+                                <span class="text-sm text-gray-600">（神楽岡駅から車5分）</span></p>
                             </div>
                             
                             <div>
-                                <h3 class="text-lg font-bold text-accent mb-2">勤務時間</h3>
-                                <p class="text-gray-800">8:00〜17:00（休憩1時間）<br>
-                                <span class="text-sm text-gray-600">残業月20時間以内</span></p>
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl mr-2">⏰</span>
+                                    <h3 class="text-lg font-bold text-accent">勤務時間</h3>
+                                </div>
+                                <p class="text-gray-800">7:45～17:30（休憩2時間）<br>
+                                月残業平均時間：10時間以下<br>
+                                <span class="text-sm text-gray-600">３６協定における特別条項 あり</span></p>
+                            </div>
+                            
+                            <div>
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl mr-2">✨</span>
+                                    <h3 class="text-lg font-bold text-accent">休日休暇</h3>
+                                </div>
+                                <p class="text-gray-800">日曜・祝日・不定期土曜<br>
+                                年間休日105日</p>
                             </div>
                         </div>
 
                         <!-- Right Column -->
                         <div class="space-y-6">
                             <div>
-                                <h3 class="text-lg font-bold text-accent mb-2">休日休暇</h3>
-                                <p class="text-gray-800">年間96日<br>
-                                4〜12月：日曜休み<br>
-                                1〜3月：土日祝休み（状況による）</p>
-                            </div>
-                            
-                            <div>
-                                <h3 class="text-lg font-bold text-accent mb-2">給与</h3>
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl mr-2">💰</span>
+                                    <h3 class="text-lg font-bold text-accent">給与</h3>
+                                </div>
                                 <p class="text-gray-800">日給9,600円〜<br>
-                                <span class="text-sm text-gray-600">各種手当・賞与年2回</span></p>
+                                （月収25万〜／年収360万〜想定）<br>
+                                <span class="text-sm text-gray-600">＋手当・賞与年2回</span></p>
                             </div>
                             
                             <div>
-                                <h3 class="text-lg font-bold text-accent mb-2">福利厚生</h3>
-                                <p class="text-gray-800">社会保険完備／制服貸与／資格取得支援／退職金制度</p>
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl mr-2">🎁</span>
+                                    <h3 class="text-lg font-bold text-accent">福利厚生</h3>
+                                </div>
+                                <p class="text-gray-800">社保完備、制服貸与、資格取得支援、退職金制度ほか</p>
                             </div>
                             
                             <div>
-                                <h3 class="text-lg font-bold text-accent mb-2">試用期間</h3>
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl mr-2">✓</span>
+                                    <h3 class="text-lg font-bold text-accent">試用期間</h3>
+                                </div>
                                 <p class="text-gray-800">3か月（同条件）</p>
                             </div>
                             
                             <div>
-                                <h3 class="text-lg font-bold text-accent mb-2">採用人数</h3>
-                                <p class="text-gray-800">3名予定<br>
-                                <span class="text-sm text-gray-600">面接1回（友達同士での応募OK）</span></p>
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl mr-2">👥</span>
+                                    <h3 class="text-lg font-bold text-accent">採用人数</h3>
+                                </div>
+                                <p class="text-gray-800">2名予定／面接1回<br>
+                                <span class="text-sm text-gray-600">（友達同士応募OK）</span></p>
                             </div>
                         </div>
                     </div>
@@ -147,34 +450,48 @@
     </section>
 
     <!-- Application Section -->
-    <section class="py-16 px-4 bg-philosophy-bg">
-        <div class="container mx-auto max-w-4xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">応募方法</h2>
-                <p class="text-lg text-gray-600">
+    <section class="py-20 px-6 bg-section-bg relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-20 right-20 w-48 h-48 border border-water-blue rounded-full"></div>
+        </div>
+        <div class="container mx-auto max-w-7xl relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-block p-3 rounded-full bg-water-blue bg-opacity-10 backdrop-blur-sm border border-water-blue border-opacity-20 mb-6">
+                    <svg class="w-8 h-8 text-water-blue" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M3 8l7.89 7.89a1 1 0 001.42 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-gradient mb-6">応募方法</h2>
+                <div class="w-24 h-1 bg-water-blue mx-auto rounded-full mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                     お気軽にお電話またはメールでご連絡ください
                 </p>
             </div>
 
-            <div class="bg-white rounded-xl shadow-lg ring-1 ring-gray-200 p-8 md:p-12">
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="text-center">
-                        <div class="text-accent text-4xl mb-4">📞</div>
-                        <h3 class="text-xl font-bold mb-4">お電話での応募</h3>
-                        <p class="text-2xl font-bold text-accent mb-2">0166-656-624</p>
-                        <p class="text-gray-600 text-sm">平日 8:00〜17:00</p>
+            <div class="bg-white rounded-2xl shadow-xl ring-1 ring-gray-200 p-8 md:p-12 hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="text-center group">
+                        <div class="w-20 h-20 bg-water-blue bg-opacity-10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-opacity-20 transition-all duration-300">
+                            <div class="text-water-blue text-4xl">📞</div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-6 text-primary-text">お電話での応募</h3>
+                        <p class="text-3xl font-bold text-water-blue mb-4">0166-65-6624</p>
+                        <p class="text-gray-600">平日 8:00〜17:00</p>
                     </div>
                     
-                    <div class="text-center">
-                        <div class="text-accent text-4xl mb-4">✉️</div>
-                        <h3 class="text-xl font-bold mb-4">メールでの応募</h3>
-                        <p class="text-lg text-accent mb-2 break-all">hayashi.m@daiei1977.com</p>
-                        <p class="text-gray-600 text-sm">担当：林（はやし）</p>
+                    <div class="text-center group">
+                        <div class="w-20 h-20 bg-water-blue bg-opacity-10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-opacity-20 transition-all duration-300">
+                            <div class="text-water-blue text-4xl">✉️</div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-6 text-primary-text">メールでの応募</h3>
+                        <p class="text-lg text-water-blue mb-4 break-all font-medium">hayashi.m@daiei1977.com</p>
+                        <p class="text-gray-600">担当：林（はやし）</p>
                     </div>
                 </div>
                 
-                <div class="mt-8 p-4 bg-gray-50 rounded-lg">
-                    <p class="text-sm text-gray-600 text-center">
+                <div class="mt-12 p-6 bg-section-bg rounded-xl">
+                    <p class="text-gray-600 text-center leading-relaxed">
                         ※応募の際は、お名前・年齢・連絡先・志望動機を簡単にお聞かせください<br>
                         ※不明な点がございましたら、お気軽にお問い合わせください
                     </p>
@@ -207,7 +524,7 @@
     <div class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg z-40">
         <div class="container mx-auto px-4 py-3">
             <div class="flex flex-col sm:flex-row gap-3 sm:justify-center">
-                <a href="tel:0166-656-624" class="flex items-center justify-center bg-accent text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all">
+                <a href="tel:0166-65-6624" class="flex items-center justify-center bg-accent text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all">
                     <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                     </svg>
@@ -242,7 +559,7 @@
                 </div>
                 <div>
                     <h4 class="text-lg font-semibold mb-4">お問い合わせ</h4>
-                    <p class="text-gray-300 mb-2">TEL: 0166-656-624</p>
+                    <p class="text-gray-300 mb-2">TEL: 0166-65-6624</p>
                     <p class="text-gray-300">Email: hayashi.m@daiei1977.com</p>
                 </div>
             </div>
@@ -252,11 +569,63 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        // Mobile menu toggle
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 100
+        });
+
+        // Header scroll effect with enhanced animations
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            const logo = document.getElementById('logo');
+            const navMenu = document.getElementById('nav-menu');
+            
+            if (window.scrollY > 50) {
+                header.classList.add('glass-morphism', 'shadow-lg');
+                header.classList.remove('bg-transparent');
+                navMenu.classList.remove('text-white');
+                navMenu.classList.add('text-primary-text');
+                // ロゴの色も変更
+                logo.querySelector('span:first-child').classList.remove('text-white');
+                logo.querySelector('span:first-child').classList.add('text-primary-text');
+                logo.querySelector('span:last-child').classList.remove('text-water-blue');
+                logo.querySelector('span:last-child').classList.add('text-accent');
+            } else {
+                header.classList.remove('glass-morphism', 'shadow-lg');
+                header.classList.add('bg-transparent');
+                navMenu.classList.add('text-white');
+                navMenu.classList.remove('text-primary-text');
+                // ロゴの色を元に戻す
+                logo.querySelector('span:first-child').classList.add('text-white');
+                logo.querySelector('span:first-child').classList.remove('text-primary-text');
+                logo.querySelector('span:last-child').classList.add('text-water-blue');
+                logo.querySelector('span:last-child').classList.remove('text-accent');
+            }
+        });
+
+        // Mobile menu toggle with animation
         document.getElementById('menu-toggle').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
     </script>
 </body>
