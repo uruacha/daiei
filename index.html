@@ -130,6 +130,27 @@
                 radial-gradient(circle at 40% 80%, rgba(14, 165, 233, 0.05) 0%, transparent 50%);
         }
         
+        .hero-slideshow {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+        
+        .hero-slide.active {
+            opacity: 1;
+        }
+        
         .parallax-bg {
             background-attachment: fixed;
             background-position: center;
@@ -184,8 +205,11 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center parallax-bg overflow-hidden" style="background-image: url('./assets/img/Generated Image September 07, 2025 - 3_45PM.jpeg');">
-        <!-- CAD設計画面のオフィス環境 - プロフェッショナルな建築設備設計のイメージ -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden hero-slideshow">
+        <!-- Background slides -->
+        <div class="hero-slide active" style="background-image: url('./assets/img/Generated Image September 07, 2025 - 3_45PM.jpeg');"></div>
+        <div class="hero-slide" style="background-image: url('./assets/img/assets_task_01k4hf75x1fmabf441jagn3zt9_1757228134_img_0.webp');"></div>
+        
         <div class="absolute inset-0 bg-gradient-to-br from-deep-blue/80 via-accent/70 to-water-blue/60"></div>
         
         <!-- Floating geometric shapes -->
@@ -262,7 +286,7 @@
                     </p>
                 </div>
                 <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="配管作業の様子" class="w-full h-96 object-cover rounded-lg shadow-lg">
+                    <img src="./assets/img/assets_task_01k4hff3zne6z99y6yzd940df1_1757228395_img_0.webp" alt="配管作業の様子" class="w-full h-96 object-cover rounded-lg shadow-lg">
                 </div>
             </div>
         </div>
@@ -651,9 +675,25 @@
             });
         });
 
+        // Hero background slideshow
+        function initHeroSlideshow() {
+            const slides = document.querySelectorAll('.hero-slide');
+            let currentSlide = 0;
+            
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+            
+            // Change slide every 8 seconds
+            setInterval(nextSlide, 8000);
+        }
+
         // Add loading animation
         window.addEventListener('load', function() {
             document.body.classList.add('loaded');
+            initHeroSlideshow();
         });
     </script>
 </body>
