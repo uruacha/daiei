@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uruacha.github.io/daiei/sitemap.xml
