@@ -6,7 +6,9 @@
       "Bash(git add:*)",
       "Bash(git push:*)",
       "Bash(python:*)",
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:uruacha.github.io)",
+      "Bash(ls:*)"
     ],
     "deny": [],
     "ask": []
