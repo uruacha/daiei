@@ -127,7 +127,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');background-size:cover;background-position:center;">
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden" style="background-image: url('./assets/img/ホームの背景.jpeg');background-size:cover;background-position:center;">
         <div class="absolute inset-0 hero-gradient"></div>
         
         <!-- Floating geometric shapes -->
@@ -216,7 +216,7 @@
                 <div class="service-card group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
                     <div class="md:flex">
                         <div class="md:w-1/2 relative overflow-hidden">
-                            <img src="./assets/img/assets_task_01k4hf75x1fmabf441jagn3zt9_1757228134_img_0.webp" alt="給排水衛生設備工事" class="w-full h-80 md:h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <img src="./assets/img/現場での作業風景 (2).HEIC" alt="給排水衛生設備工事" class="w-full h-80 md:h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='./assets/img/給排水工事.jpg'">
                             <div class="absolute inset-0 bg-accent bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
                             <div class="absolute top-4 left-4">
                                 <div class="bg-water-blue text-white px-3 py-1 rounded-full text-sm font-medium">SERVICE 01</div>
@@ -262,7 +262,7 @@
                 <div class="service-card group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
                     <div class="md:flex md:flex-row-reverse">
                         <div class="md:w-1/2 relative overflow-hidden">
-                            <img src="./assets/img/IMG_1434.JPG" alt="浄化槽設備工事" class="w-full h-80 md:h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <img src="./assets/img/浄化槽工事.JPG" alt="浄化槽設備工事" class="w-full h-80 md:h-full object-cover group-hover:scale-110 transition-transform duration-500">
                             <div class="absolute inset-0 bg-accent bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
                             <div class="absolute top-4 left-4">
                                 <div class="bg-water-blue text-white px-3 py-1 rounded-full text-sm font-medium">SERVICE 02</div>
@@ -295,11 +295,21 @@
             <div class="mb-16" data-aos="fade-up" data-aos-delay="400">
                 <div class="service-card group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
                     <div class="md:flex">
-                        <div class="md:w-1/2 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="旭川市水道局指定業者" class="w-full h-80 md:h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-accent bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                        <div class="md:w-1/2 relative overflow-hidden bg-gradient-to-br from-water-blue to-deep-blue h-80 md:h-full flex items-center justify-center">
+                            <div class="text-center p-8 transform group-hover:scale-105 transition-transform duration-500">
+                                <div class="bg-white rounded-2xl p-8 shadow-2xl">
+                                    <div class="text-water-blue font-bold text-3xl mb-3">旭川市</div>
+                                    <div class="text-accent font-bold text-4xl mb-4">水道局指定業者</div>
+                                    <div class="flex items-center justify-center mt-6">
+                                        <svg class="w-8 h-8 text-water-blue mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-lg font-medium text-gray-600">認定業者</span>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="absolute top-4 left-4">
-                                <div class="bg-water-blue text-white px-3 py-1 rounded-full text-sm font-medium">SERVICE 03</div>
+                                <div class="bg-white text-water-blue px-3 py-1 rounded-full text-sm font-medium shadow-lg">SERVICE 03</div>
                             </div>
                         </div>
                         <div class="md:w-1/2 p-8">
@@ -349,8 +359,19 @@
                 <div class="w-24 h-1 bg-water-blue mx-auto rounded-full mb-6"></div>
             </div>
             
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                <img src="/assets/img/excavator_pipe.png" alt="現場作業風景" class="w-full h-64 md:h-80 object-cover" onerror="this.src='https://images.unsplash.com/photo-1581094651181-35942459ef62?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./assets/img/給排水工事.jpg" alt="給排水工事作業風景" class="w-full h-64 md:h-80 object-cover">
+                </div>
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <img src="./assets/img/浄化槽工事.JPG" alt="浄化槽工事作業風景" class="w-full h-64 md:h-80 object-cover">
+                </div>
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <img src="./assets/img/現場での風景.jpg" alt="現場作業風景" class="w-full h-64 md:h-80 object-cover">
+                </div>
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+                    <img src="./assets/img/ホームの背景.jpg" alt="現場環境" class="w-full h-64 md:h-80 object-cover">
+                </div>
             </div>
             <p class="text-xl mt-8 text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 熟練した技術者が最新の設備と確かな技術で、安全かつ迅速に作業を進めます
@@ -397,7 +418,6 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">お問い合わせ</h4>
                     <p class="text-gray-300 mb-2">TEL: 0166-65-6624</p>
-                    <p class="text-gray-300">Email: hayashi.m@daiei1977.com</p>
                 </div>
             </div>
             <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-400">
